@@ -35,7 +35,7 @@ class Review(models.Model):
     author = models.CharField(max_length=255, verbose_name="Автор")
     create = models.DateTimeField(verbose_name="Дата отзыва")
     text = models.TextField(verbose_name="Текст отзыва")
-    pros = models.TextField(verbose_name="Плюсы")
+    pros = models.TextField(blank=True, null=True, verbose_name="Плюсы")
 
     def __str__(self):
         return f"{self.author} - {self.create}"
