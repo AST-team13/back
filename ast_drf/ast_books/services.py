@@ -27,7 +27,7 @@ class ReviewService:
                     create = item.get('createdDate')
 
                     # Фильтруем отзывы
-                    if rating == 5 and 60 >= len(text) <= 240 or 60 >= len(pros) <= 240:
+                    if rating == 5 and len(text) >= 60 or len(pros) >= 60 and len(text) <= 240 or len(pros) <= 240:
                         reviews.append({
                             'author': author,
                             'create': create,
